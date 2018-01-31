@@ -1,11 +1,10 @@
-<!--这是博文页面的主要显示页面-->
 ---
 layout: page
 description: "To Learn And More"
 ---
-<!--paginator是一个分页插件，可以将页面分页-->
+
 {% for post in paginator.posts %}
-<div class="post-preview" id = "66666">
+<div class="post-preview" id = "6666">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
             {{ post.title }}
