@@ -69,7 +69,14 @@ Web App Manifest，即通过一个清单文件向浏览器暴露 web 应用的�
 *图片来源: [appleinsider.com][i1]*
 
 但是很快，随着越来越多的私有平台通过 `<meta>`/`<link>` 标签来为 web 应用添加「私货」，`<head>` 很快就被塞满了：
+```html
+ class Student{
+   public static void main(String args){
+     
+   }
+ }
 
+```
 ```html
 <!-- Add to homescreen for Safari on iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
