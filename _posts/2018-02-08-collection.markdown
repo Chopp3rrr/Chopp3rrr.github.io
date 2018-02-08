@@ -21,7 +21,7 @@ tags:
 先看整个集合框架。
 ![img](/img/collection-1.png)
 
-Iterable接口：Collection接口继承的父接口，主要方法为Iterator()方法，返回值类型为Iterator接口，由每个Collection实现类内部自己定义的内部类，实现Iterator接口，确保迭代器遍历集合(多态的使用)。
+Iterable接口：Collection接口继承的父接口，主要方法为Iterator()方法，返回值类型为Iterator接口，由每个Collection实现类内部自己定义的内部类，实现Iterator接口，确保不同实现类，不同数据结构由自定义的迭代器遍历集合(多态的使用)。
 ```html
 public interface Iterable<T> {
         Iterator<T> iterator();
