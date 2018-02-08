@@ -16,16 +16,72 @@ tags:
 
 最近看书复习基础知识，看到集合框架，做个笔记记录一下。 
 
+
+---
 ##正文
 
 先看整个集合框架。
 ![img](/img/collection-1.png)
 
-Iterable接口：Collection接口继承的父接口，主要方法为Iterator()方法，返回值类型为Iterator接口，由每个Collection实现类内部自己定义的内部类，实现Iterator接口，确保不同实现类，不同数据结构由自定义的迭代器遍历集合(多态的使用)。
+一些比较基础常用的集合类
 ```html
-public interface Iterable<T> {
-        Iterator<T> iterator();
-```
-之前一直想着可以有一个自己的博客，也查了很多，无奈都半途而废，这几天在家终于弄出来自己的博客了。
+                                    ArrayList 
+                             List   
+                                    LinkedList                        
 
-目前完全是按照Hux的github.io模板来做得(其实就是fork+copy人家的github)，目前自己还属于菜鸡阶段，所以很多前端内容都没有深入了解过，所以之后会慢慢搞懂前端部分，不过主要还是更新java吧，写些自己在学习过程之中遇到的各种java语法糖等等，因为自己还属于初级阶段，所以会可能内容不会涉及编译器、虚拟机部分等等，相对基础(其实就是简单)，但是与我而言，也是积累吧，给予自己学习的动力和反馈。
+Iterable  --> Collection        
+                                    HashSet
+                             Set
+                                    TreeSet
+```                                         
+Iterable接口：
+Collection接口继承的父接口，主要方法为Iterator()方法，返回值类型为Iterator接口，由每个Collection实现类内部自己定义的内部类，实现Iterator接口，确保不同实现类，不同数据结构由自定义的迭代器遍历集合(多态的使用)。
+```html
+
+public interface Iterable<T> {
+
+    Iterator<T> iterator();
+
+}
+```
+
+Iterator接口：
+该接口是所有具体的集合类中内部迭代器类的的父接口，在每个不同的集合类内部，通过的实现不同数据结构，由专属的内部类迭代器完成对于数据的访问，在该接口内，定义了通用的方法。
+
+```html
+
+public interface Iterator<E> {
+
+    //检查是否还有下一个元素
+    boolean hasNext();
+
+    //输出下一个元素
+    E next();
+
+    //jdk8之后，可以在接口之中有具体的方法定义。
+    default void remove() {
+        throw new UnsupportedOperationException("remove");
+    }
+
+}
+```
+Collection接口：
+该接口是奠定了集合容器的基础，内部包含针对容器对于元素的基本操作。该接口没有直接的实现对象，由该接口派生出两个分支 **Set**和**List**，**List**的实现类确保内部元素可重复，保存顺序与存入顺序一致，而**Set**的实现类确保内部元素不可重复，存储顺序与存入顺序没有关系。
+```html
+
+public interface Collection<E> extends Iterable<E> {
+
+        int size();
+        boolean add(E e);
+        boolean remove(Object o);
+}
+
+```
+
+List(有序，可重复)
+List里存放的对象是有序的，同时也是可以重复的，List关注的是索引，拥有一系列和索引相关的方法，查询速度快。因为往list集合里插入或删除数据时，会伴随着后面数据的移动，所有插入删除数据速度慢。
+
+
+Set(无序，不可重复)
+Set里存放的对象是无序，不能重复的，集合中的对象不按特定的方式排序，只是简单地把对象加入集合中。
+
