@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "jdk8中的集合框架(一)"
+title:      "jdk8中的集合框架(二)--arrayList"
 subtitle:   " \"jdk8中集合框架汇总\""
-date:       2018-02-08 11:15:00
+date:       2018-02-08 14:05:00
 author:     "FengZzz"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
@@ -11,17 +11,15 @@ tags:
 ---
 
 
-
-## 前言
-
-最近看书复习基础知识，看到集合框架，做个笔记记录一下。 
-
-
----
 ##正文
+arrayList是jdk对于数组元素的补充，但是它通过封装数组拷贝的操作，解决了数组长度不可变，必须由使用者自己解决的缺点，也就是可变长度，具体如下。
+```html
+public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, java.io.Serializable {
 
-先看整个集合框架。
-![img](/img/collection-1.png)
+
+
+```    
+
 
 一些比较基础常用的集合类
 ```html
