@@ -15,6 +15,6 @@
 
   ## Markdown简介
 
-  >java是一个语言-[百度百科](https://baike.baidu.com/item/Java/85979#viewPageContent)
+  >java是一个语言-[百度百科](https://baike.baidu.com/item/Java/85979#viewPageContent?_blank)
 
   真如你在阅读这份文档,它使用简单的符号表示不同的标题,将某些文字标记为**粗体**或者*斜体*,创建一个[链接](www.baidu.com),或者一个脚注[^demo],更多语法请按`ctrl+/`查看帮助
